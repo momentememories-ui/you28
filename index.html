@@ -41,7 +41,7 @@
         }
         .instruction {
             font-size: clamp(14px, 4vw, 18px);
-            color: #ffb3c1;
+            color: white; /* เปลี่ยนเป็นสีขาว */
             animation: fade 2s infinite;
             margin: 0;
         }
@@ -84,10 +84,9 @@
         }
 
         function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // ลบภาพเก่าออก
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = "#ff8fa3";
-            // ✅ ใช้ฟอนต์ Prompt เหมือน UI
+            ctx.fillStyle = "white"; // เปลี่ยนตัวหนังสือในหัวใจเป็นสีขาว
             ctx.font = "bold 14px 'Prompt', sans-serif";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -120,7 +119,6 @@
         window.addEventListener('click', playMusic);
         window.addEventListener('touchstart', playMusic);
 
-        // ✅ รอ font โหลดก่อนค่อยเริ่มวาด
         document.fonts.ready.then(() => {
             draw();
         });
